@@ -17,5 +17,5 @@ Here are some ideas for projects and tasks that you can work on to commit increm
 7. Experiment with a new programming concept or technique
 8. Review and update documentation for an existing project
 
-Acknowledgments
+## Acknowledgments
 Inspiration for the daily commit challenge from the GitHub community and close friends.
