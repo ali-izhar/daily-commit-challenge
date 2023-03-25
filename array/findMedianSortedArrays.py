@@ -23,6 +23,8 @@ Constraints:
     * -10^6 <= nums1[i], nums2[i] <= 10^6
 """
 
+from typing import List
+
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
         # merge and sort both lists

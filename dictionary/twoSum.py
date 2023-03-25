@@ -25,6 +25,8 @@ Constraints:
     *   Only one valid answer exists.
 """
 
+from typing import List
+
 class Solution:
     
     """

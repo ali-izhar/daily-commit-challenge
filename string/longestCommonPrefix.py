@@ -19,6 +19,8 @@ Constraints:
     * strs[i] consists of only lowercase English letters.
 """
 
+from typing import List
+
 class Solution:
 
     # approach 1: horizontal scanning
