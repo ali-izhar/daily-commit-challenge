@@ -17,5 +17,11 @@ Here are some ideas for projects and tasks that you can work on to commit increm
 7. Experiment with a new programming concept or technique
 8. Review and update documentation for an existing project
 
+## Projects
+Here are my current projects that I am working on to complete the daily commit challenge:
+1. LeetCode problems
+2. Machine Learning projects
+3. Data Science projects
+
 ## Acknowledgments
 Inspiration for the daily commit challenge from the GitHub community and close friends.
