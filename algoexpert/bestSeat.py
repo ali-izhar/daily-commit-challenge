@@ -32,3 +32,25 @@ def bestSeat(row):
                 maxDistance = minDistance
                 bestSeat = i
     return bestSeat
+
+# Time: O(n) | Space: O(1)
+def bestSeat(row):
+    maxDistance = -1
+    bestSeat = -1
+    for i in range(len(row)):
+        if row[i] == 0:
+            left = i - 1
+            right = i + 1
+            while left >= 0 and row[left] == 0:
+                left -= 1
+            while right < len(row) and row[right] == 0:
+                right += 1
+            leftDistance = i - left
+            rightDistance = right - i
+            minDistance = min(leftDistance, rightDistance)
+            if minDistance > maxDistance:
+                maxDistance = minDistance
+                bestSeat = i
+            elif minDistance == maxDistance:
+                bestSeat = min(bestSeat, i)
+    return bestSeat
