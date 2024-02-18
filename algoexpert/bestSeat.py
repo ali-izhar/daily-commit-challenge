@@ -14,43 +14,45 @@ Sample Output:
 """
 
 # Time: O(n) | Space: O(1)
-def bestSeat(row):
-    maxDistance = -1
+def bestSeat(seats):
     bestSeat = -1
-    for i in range(len(row)):
-        if row[i] == 0:
-            left = i - 1
-            right = i + 1
-            while left >= 0 and row[left] == 0:
-                left -= 1
-            while right < len(row) and row[right] == 0:
-                right += 1
-            leftDistance = i - left
-            rightDistance = right - i
-            minDistance = min(leftDistance, rightDistance)
-            if minDistance > maxDistance:
-                maxDistance = minDistance
-                bestSeat = i
+    maxSpace = 0
+
+    left = 0
+    while left < len(seats):
+        right = left + 1
+        while right < len(seats) and seats[right] == 0:
+            right += 1
+
+        availableSpace = right - left - 1
+        if availableSpace > maxSpace:
+            bestSeat = (left + right) // 2
+            maxSpace = availableSpace
+        left = right
+
     return bestSeat
 
 # Time: O(n) | Space: O(1)
-def bestSeat(row):
-    maxDistance = -1
-    bestSeat = -1
-    for i in range(len(row)):
-        if row[i] == 0:
-            left = i - 1
-            right = i + 1
-            while left >= 0 and row[left] == 0:
-                left -= 1
-            while right < len(row) and row[right] == 0:
-                right += 1
-            leftDistance = i - left
-            rightDistance = right - i
-            minDistance = min(leftDistance, rightDistance)
-            if minDistance > maxDistance:
-                maxDistance = minDistance
-                bestSeat = i
-            elif minDistance == maxDistance:
-                bestSeat = min(bestSeat, i)
-    return bestSeat
+def bestSeat(seats):
+    left = 1
+    right = 2
+    best = -1
+    maxSpace = 0
+
+    while right < len(seats):
+        if seats[left] == 1:
+            left = right
+            right = left + 1
+            continue
+
+        while right < len(seats) and seats[right] == 0:
+            right += 1
+
+        availableSpace = right - left
+        if availableSpace > maxSpace:
+            maxSpace = availableSpace
+            best = (right - 1 + left) // 2
+        left = right + 1
+        right = left + 1
+
+    return best
