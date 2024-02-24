@@ -30,6 +30,7 @@ class BST:
 
 
 # Time: O(log(n)) | Space: O(1)
+# Worst case: Time: O(n) | Space: O(1)
 def findClosestValueInBst(tree, target):
     closest = float("inf")
     current = tree
@@ -46,6 +47,7 @@ def findClosestValueInBst(tree, target):
 
 
 # Time: O(log(n)) | Space: O(log(n))
+# Worst case: Time: O(n) | Space: O(n)
 def findClosestValueInBst(tree, target):
     return findClosestHelper(tree, target, float('inf'), None)
 
@@ -64,4 +66,3 @@ def findClosestHelper(tree, target, min_dist, best_value):
         return findClosestHelper(tree.right, target, min_dist, best_value)
     else:
         return best_value
-
